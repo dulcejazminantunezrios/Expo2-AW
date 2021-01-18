@@ -13,15 +13,14 @@ export class AlumnosComponent implements OnInit {
   selectedAlumno: Alumno;
 
   constructor() { }
+  public Cambio:boolean = false;
 
   ngOnInit() {
   }
-
+  cambiarClase():void{
+    this.Cambio = !this.Cambio
+  }
   onSelect(alumno: Alumno): void {
     this.selectedAlumno = alumno;
-  }
-
-  evento1():void{
-    console.log("Se dio click")
   }
 }

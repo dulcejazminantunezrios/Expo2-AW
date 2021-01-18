@@ -6,14 +6,13 @@
     <span class="badge">{{alumno.matricula}}</span> {{alumno.nombre}} {{alumno.apellidos}}
   </li>
 </ul>
-<button (click)="v='false'">Ocultar</button>
-<button (click)="w='true'">Mostrar</button>
+<button (click)="cambiarClase()">Ocultar/Mostrar</button>
 
 <div *ngIf="selectedAlumno">
 
   <h2>{{selectedAlumno.nombre | uppercase}} Detalles</h2>
   <div><span>matricula: </span>{{selectedAlumno.matricula}}</div>
-  <div [ngClass]="{'ocultar':v=='false','mostrar':w=='true'}">
+  <div [ngClass]="Cambio ? 'mostrar': 'ocultar'">
     <label>Alumno:
       <input [(ngModel)]="selectedAlumno.nombre" placeholder="Nombre..."/>
     </label>
