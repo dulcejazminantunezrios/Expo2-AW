@@ -1,4 +1,5 @@
 <h2>Mis Alumnos</h2>
+<h3>Seleccione un alumno para ver más información y editar</h3>
 <ul class="alumnos">
   <li *ngFor="let alumno of alumnos"
     [class.selected]="alumno === selectedAlumno"
@@ -6,15 +7,19 @@
     <span class="badge">{{alumno.matricula}}</span> {{alumno.nombre}} {{alumno.apellidos}}
   </li>
 </ul>
-<button (click)="cambiarClase()">Ocultar/Mostrar</button>
-
-<div *ngIf="selectedAlumno">
+<button (click)="cambiarClase()">Detalles</button>
+<div *ngIf="selectedAlumno"[ngClass]="Cambio ? 'mostrar': 'ocultar'">
 
   <h2>{{selectedAlumno.nombre | uppercase}} Detalles</h2>
   <div><span>matricula: </span>{{selectedAlumno.matricula}}</div>
-  <div [ngClass]="Cambio ? 'mostrar': 'ocultar'">
-    <label>Alumno:
+  <div>
+    <label>Nombre:
       <input [(ngModel)]="selectedAlumno.nombre" placeholder="Nombre..."/>
+    </label>
+  </div>
+  <div>
+    <label>Apellidos:
+      <input [(ngModel)]="selectedAlumno.apellidos" placeholder="Apellidos..."/>
     </label>
   </div>
 

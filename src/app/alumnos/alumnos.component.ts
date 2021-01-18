@@ -13,7 +13,7 @@ export class AlumnosComponent implements OnInit {
   selectedAlumno: Alumno;
 
   constructor() { }
-  public Cambio:boolean = false;
+  public Cambio:boolean = true;
 
   ngOnInit() {
   }

@@ -41,6 +41,12 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
+button{
+  color: #fff;
+  background-color: #405061;
+  font-size: medium;
+  font-family: 'Segoe UI', Tahoma,Verdana, sans-serif;
+}
 .ocultar{
   visibility: hidden;
 }
